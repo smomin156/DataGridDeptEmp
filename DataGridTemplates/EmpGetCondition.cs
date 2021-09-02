@@ -16,9 +16,9 @@ namespace DataGridTemplates
             if (value != null)
             {
                 DEPT dept = value as DEPT;
-                var query1 = (from d in db.EMPs
-                              where d.DEPTNO == dept.DEPTNO
-                              select new { Ename = d.ENAME, Job = d.JOB }).ToList();
+                var query1 = (from emp in db.EMPs
+                              where emp.DEPTNO == dept.DEPTNO
+                              select new { Ename = emp.ENAME, Job = emp.JOB }).ToList();
 
                 return query1;
             }
